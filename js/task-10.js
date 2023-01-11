@@ -23,20 +23,21 @@ function destroyBoxes() {
     });
 }
 
-
 const inputAmountBoxes = document.querySelector('#controls input');
 const addBoxes = document.querySelector('#controls [data-create]');
 
-inputAmountBoxes.addEventListener('input', event => {
-  let amount = event.currentTarget.value;
+
+  
+  
   addBoxes.addEventListener('click', () => {
+    let amount = inputAmountBoxes.value;
     createBoxes(amount);
     amount = 0;
     document.querySelector('#controls input').value = '';
   });
-});
-const btnRemoveBoxes = document.querySelector('#controls [data-destroy]');
 
+
+const btnRemoveBoxes = document.querySelector('#controls [data-destroy]');
 btnRemoveBoxes.addEventListener('click', () => {
     destroyBoxes();
 });
