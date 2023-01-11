@@ -16,29 +16,21 @@ function createBoxes(amount) {
   
 }
 
-function destroyBoxes() {
-    const boxes2Remove = document.querySelectorAll('#boxes div');
-    boxes2Remove.forEach(value => {
-      value.remove();
-    });
-}
-
 const inputAmountBoxes = document.querySelector('#controls input');
+
 const addBoxes = document.querySelector('#controls [data-create]');
-
-
-  
-  
-  addBoxes.addEventListener('click', () => {
+addBoxes.addEventListener('click', () => {
     let amount = inputAmountBoxes.value;
     createBoxes(amount);
     amount = 0;
     document.querySelector('#controls input').value = '';
   });
 
-
 const btnRemoveBoxes = document.querySelector('#controls [data-destroy]');
 btnRemoveBoxes.addEventListener('click', () => {
-    destroyBoxes();
+  const boxes2Remove = document.querySelectorAll('#boxes div');
+  boxes2Remove.forEach(value => {
+    value.remove();
+  });
 });
 
