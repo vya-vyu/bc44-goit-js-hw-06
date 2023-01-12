@@ -12,20 +12,16 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
-console.log(images[1]);
 
 const list = document.querySelector('.gallery');
-console.log(list);
 
 const makeItemMarkup = ({ url, alt})=>{
   return `
   <li>
    <img src="${url}" alt="${alt}"></img>
   </li>`;
-  
  
 };
 const listItem = images.map(makeItemMarkup).join("");
-console.log(listItem);
 
 list.insertAdjacentHTML('beforeend', listItem);
